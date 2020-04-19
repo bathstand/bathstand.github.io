@@ -48,12 +48,15 @@
 }
   
   .max{width:100%;height:auto;}
-  .min{width:150px;height:auto;}
+  .min{width:100px;height:auto;}
 </style>
    
 <script src="jquery-2.1.1.js" type="text/javascript">
    $(document).ready(function() {
       $(".title").addClass("animated shake");
+      $("#img").click(function(){
+      $(this).toggleClass("min");
+      $(this).toggleClass("max");
     });
   
    $(function(){
