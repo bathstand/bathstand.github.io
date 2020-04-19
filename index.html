@@ -63,6 +63,11 @@
   
 <script>
   
+ $("#gotop").click(function (e) { 
+     e.preventDefault();
+    $(document.body).animate({scrollTop: 0}, 80);
+ });
+    
  $("#gotop").click(function(){
     jQuery("html,body").animate({
         scrollTop:0
@@ -86,7 +91,7 @@
   
   <body bgcolor="#ffdab9">
     <div style="text-align:center;" class="title"><h7><b>修揪來畫吉娃娃</b></h7></div>
-    <div style="text-align:center;"><h4>PORTFOLIO</h4></div>
+    <h4>PORTFOLIO</h4>
     
    <div style="text-align:center;">  
       <div class="pic" >
