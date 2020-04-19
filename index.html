@@ -1,5 +1,6 @@
 <html>
-
+<meta charset="utf-8">
+<script src="jquery-2.1.1.js" type="text/javascript"></script>
 <style>
   h4 {
     font-family:fantacy;
@@ -71,10 +72,12 @@
       $(".title").addClass("animated shake");
     });
   
-  $("#img").click(function(){
-    $(this).toggleClass("min");
-    $(this).toggleClass("max");
-});
+   $(function(){
+    $('#img').click(function(){
+      $(this).toggleClass('min');
+      $(this).toggleClass('max');
+    });
+  });
 </script>
   
   
@@ -138,3 +141,4 @@
       <li>吉娃娃不是一般的雞掰</li>
       </div>
   </body>
+  </head>
