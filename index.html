@@ -20,12 +20,22 @@
     
     
   }
+  
+  #btn_top { 
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none; }
 
 </style>
 
 <style type="text/css">
 .pic { 
   width: 300px;
+  float: left;
+  padding: 5px;
+  border: 1px solid #ff7f50;
+  background: #fff; margin: 5px; 
   
   }
 .pic img{ 
@@ -52,11 +62,15 @@
       $(this).toggleClass("min");
       $(this).toggleClass("max");
     });
-  
-   $(function(){
-    $("#img").click(function(){
-      $(this).toggleClass("min");
-      $(this).toggleClass("max");
+  $('#btn_top').click(function () {
+    $('html,body').animate({ scrollTop: 0 }, 500);
+  });
+     
+  $(function () {
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= 50) {
+        $('#btn_top').fadeIn(); } else {
+          $('#btn_top').fadeOut(); }
     });
   });
 </script>
@@ -123,5 +137,6 @@
         <li>持續會有新的作品出來(大概</li>
         <li>吉娃娃不是一般的雞掰</li>
        </div>
+    <button id="btn_top" title="回到頂部"> TOP </button>
   </body>
   </head>
