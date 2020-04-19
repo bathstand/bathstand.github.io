@@ -1,5 +1,5 @@
 <html>
-<meta charset="utf-8">
+<script src="js/jquery.min.js"</script>
 <style>
   h4 {
     font-family:fantacy;
@@ -21,20 +21,28 @@
     
   }
   
-  #btn_top { 
+#gotop {
     position: fixed;
-    bottom: 10px;
-    right: 10px;
-    display: none; }
+    border-radius: 50px;
+    right: 20px;
+    bottom: 30px;
+    padding: 10px 16px;
+    font-size: 25px;
+    background: rgba(228, 211, 211, 0.36);
+    color: #FAFCFD;
+    cursor: pointer;
+    z-index: 1000;
+}
 
 </style>
+
 
 <style type="text/css">
 .pic { 
   width: 300px;
-  float: left;
+  
   padding: 5px;
-  border: 1px solid #ff7f50;
+  border: 5px solid #ff7f50;
   background: #fff; margin: 5px; 
   
   }
@@ -48,9 +56,7 @@
   
   .pic p { 
     float: left;
-    padding: 5px;
-    border: 1px solid #ff7f50;
-    background: #fff; margin: 5px; }
+     }
 
 
 </style>
@@ -59,19 +65,21 @@
    $(document).ready(function() {
       $(".title").addClass("animated shake");
       $("#img").click(function(){
-      $(this).toggleClass("min");
-      $(this).toggleClass("max");
+      
     });
-  $('#btn_top').click(function () {
-    $('html,body').animate({ scrollTop: 0 }, 500);
-  });
      
-  $(function () {
-    $(window).scroll(function () {
-      if ($(window).scrollTop() >= 50) {
-        $('#btn_top').fadeIn(); } else {
-          $('#btn_top').fadeOut(); }
-    });
+  $("#gotop").click(function(){
+    jQuery("html,body").animate({
+        scrollTop:0
+    },1000);
+  });
+  
+  $(window).scroll(function() {
+    if ( $(this).scrollTop() > 300){
+        $('#gotop').fadeIn("fast");
+    } else {
+        $('#gotop').stop().fadeOut("fast");
+    }
   });
 </script>
   
@@ -137,6 +145,6 @@
         <li>持續會有新的作品出來(大概</li>
         <li>吉娃娃不是一般的雞掰</li>
        </div>
-    <button id="btn_top" title="回到頂部"> TOP </button>
+   <div id="gotop">˄</div>
   </body>
   </head>
